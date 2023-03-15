@@ -34,8 +34,8 @@ fun HomeScreen(viewModel: HomeViewModel, navController: NavHostController) {
                 .background(DeepBlue),
         ) {
             Text(
-                text = "Genres",
-                modifier = Modifier.padding(horizontal = 8.dp),
+                text = "From TMDB API",
+                modifier = Modifier.padding(horizontal = 8.dp, vertical = 16.dp),
                 style = MaterialTheme.typography.h2
             )
             GenresSection(genres= GenreType.getAllGenres(), onClick = { genre ->
