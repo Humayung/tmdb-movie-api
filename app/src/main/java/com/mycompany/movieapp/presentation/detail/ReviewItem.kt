@@ -32,8 +32,14 @@ fun ReviewItem(
         Spacer(modifier = Modifier.width(10.dp))
         Column {
             Text(text = review.author!!, fontWeight = FontWeight.Bold)
-            Text(text = "${review.authorDetails.rating.toString()} / 10", color = BlueViolet2)
-            review.authorDetails.rating?.let { RatingBars(stars = 10, rating = it, starSize = 12.dp) }
+            review.authorDetails.rating?.let {
+                Text(text = "${review.authorDetails.rating.toInt()} / 10", color = BlueViolet2)
+                RatingBars(
+                    stars = 10,
+                    rating = it,
+                    starSize = 12.dp
+                )
+            }
             Spacer(modifier = Modifier.height(10.dp))
             Text(
                 text = review.content!!,
